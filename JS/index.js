@@ -81,15 +81,19 @@ function TimeHandler(){
     //console.log(seconds)
     if (seconds == 60) {
         minute += 1;
+        seconds = 0;
     }
     if (minute == 60) {
         hours += 1;
+        minute = 0;
     }
+    Displaytime();
 }
 setInterval(TimeHandler,1000)
 
 //get  divtimer
-var time_el=document.querySelector("div# .js-timer")
-function Displaytime(){
+var timer=document.querySelector("div#TM .js-timer");
 
+function Displaytime(){
+    timer.innerHTML = hours+":"+minute+":"+seconds;
 }
