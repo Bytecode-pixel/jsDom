@@ -89,11 +89,50 @@ function TimeHandler(){
     }
     Displaytime();
 }
-setInterval(TimeHandler,1000)
 
 //get  divtimer
-var timer=document.querySelector("div#TM .js-timer");
+var time_all=document.getElementById("TM"), timer;
+
+
+var btn_start = document.getElementById("js-button-start");
+var btn_pause = document.getElementById("js-button-pause")
+var btn_reset = document.getElementById("js-button-reset");
+
+
 
 function Displaytime(){
-    timer.innerHTML = hours+":"+minute+":"+seconds;
+    let fommat_hours = hours, 
+        fommat_minute =minute,
+        fommat_seconds=seconds;
+
+    if (seconds < 10) {
+        
+        fommat_seconds= "0"+ seconds;
+    }
+    if (minute < 10) {
+        fommat_minute= "0"+ minute;
+    }
+    if (hours < 10) {
+        fommat_hours= "0"+ hours;
+    }
+
+    time_all.innerHTML = fommat_hours+":"+fommat_minute+":"+fommat_seconds;
+    
 }
+
+btn_start.addEventListener("click",function(){
+    timer= setInterval(TimeHandler,1000);
+    btn_reset.style.display="false";
+})
+
+btn_pause.addEventListener("click",function(){
+    timer= clearInterval(timer);
+})
+
+btn_reset.addEventListener("click",function(){
+    timer= clearInterval(TimeHandler);
+    seconds = 0;
+    minute = 0;
+    hours= 0;
+    timer.innerHTML = "00:00:00";
+})
