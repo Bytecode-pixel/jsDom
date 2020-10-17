@@ -122,7 +122,7 @@ function Displaytime(){
 
 btn_start.addEventListener("click",function(){
     timer= setInterval(TimeHandler,1000);
-    btn_reset.style.display="false";
+    //btn_reset.style.display="false";
 })
 
 btn_pause.addEventListener("click",function(){
