@@ -130,9 +130,9 @@ btn_pause.addEventListener("click",function(){
 })
 
 btn_reset.addEventListener("click",function(){
-    timer= clearInterval(TimeHandler);
+    timer= clearInterval(timer);
     seconds = 0;
     minute = 0;
     hours= 0;
-    timer.innerHTML = "00:00:00";
+    time_all.innerHTML = "00:00:00";
 })
