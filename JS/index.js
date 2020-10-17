@@ -70,8 +70,34 @@ BrownRadioColor.addEventListener("change",()=>{
 LavenderRadioColor.addEventListener("change",()=>{
     lavender();
 });
+// bài 12
 
+var quantity=document.getElementById("js-quantity");
+var price= document.getElementById("js-quantity");
+var totalPrice= document.getElementById("js-totalPrice");
+var quantity_el=0;
+var price_el=0;
+var totalPrice_el=0;
 
+function checkNum()
+{
+    if (quantity!== ''||quantity!=="") {
+        quantity_el = Number(quantity.value)
+    }
+    if (price!== ''||price!=="") {
+        price_el = Number(price.value)
+    }
+}
+totalPrice.addEventListener("click",function(){
+    checkNum();
+    totalPrice_el= quantity_el*price_el;
+    updatetotalPrice(totalPrice_el);
+})
+
+//get ra nan hình
+function updatetotalPrice(result){
+    totalPrice.value=result;
+}
 // bài 13
 
 var seconds =0, minute = 0, hours= 0;
