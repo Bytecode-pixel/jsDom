@@ -70,10 +70,31 @@ BrownRadioColor.addEventListener("change",()=>{
 LavenderRadioColor.addEventListener("change",()=>{
     lavender();
 });
+//Bài 12 
+
+var dots = document.getElementById("dots");
+var moreText = document.getElementById("more");
+var btnText = document.getElementById("myBtn");
+
+btnText.addEventListener("click",myFunction());
+
+function myFunction() {
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
+}
+
+
 // bài 12
 
 var quantity=document.getElementById("js-quantity");
-var price= document.getElementById("js-quantity");
+var price= document.getElementById("js-price");
 var totalPrice= document.getElementById("js-totalPrice");
 var quantity_el=0;
 var price_el=0;
