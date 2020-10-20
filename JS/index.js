@@ -70,7 +70,7 @@ BrownRadioColor.addEventListener("change",()=>{
 LavenderRadioColor.addEventListener("change",()=>{
     lavender();
 });
-//Bài 12 
+//Bài 10
 
 var dots = document.getElementById("dots");
 var moreText = document.getElementById("more");
